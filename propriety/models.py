@@ -5,7 +5,7 @@ class Propriety(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False, editable=False)
     updated_at = models.DateTimeField(auto_now=True, blank=False, null=False, editable=False)
     activation_date = models.DateTimeField(blank=False, null=False)
-    code = models.CharField(max_length=250, null=False, blank=False)
+    code = models.CharField(max_length=250, null=False, blank=False, unique=True)
     guests_limit = models.IntegerField(null=False, blank=False)
     bathroom_count = models.IntegerField(null=False, blank=False)
     pet_frendly = models.BooleanField(null=False, blank=False)
