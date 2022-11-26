@@ -10,7 +10,7 @@ def generate_random_code(cls):
 class Booking(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False)
     updated_at = models.DateTimeField(auto_now=True, blank=False, null=False)
-    code = models.UUIDField(blank=False, null=False, editable=False, default=generate_random_code)
+    code = models.UUIDField(blank=False, null=False, editable=False, default=generate_random_code, unique=True)
     advertisement_id = models.ForeignKey(Advertisement, on_delete=models.CASCADE, null=False, blank=False)
     check_in = models.DateField(null=False, blank=False)
     check_out = models.DateField(null=False, blank=False)
