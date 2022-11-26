@@ -10,3 +10,6 @@ class Propriety(models.Model):
     bathroom_count = models.IntegerField(null=False, blank=False)
     pet_frendly = models.BooleanField(null=False, blank=False)
     cleaner_fee = models.DecimalField(decimal_places=2, max_digits=9, null=False, blank=False)
+
+    def __str__(self):
+        return str(self.pk)
