@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'advertisement',
     'propriety',
-    'booking'
+    'booking',
+    'api'
 ]
 
 MIDDLEWARE = [
