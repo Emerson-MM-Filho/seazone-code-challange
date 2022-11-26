@@ -5,9 +5,11 @@ from rest_framework import routers
 from rest_framework.schemas import get_schema_view
 
 from propriety import views as propriety_views
+from booking import views as booking_views
 
 router = routers.DefaultRouter()
 router.register(r'propriety', propriety_views.ProprietyViewSet, basename='propriety')
+router.register(r'booking', booking_views.BookingViewSet, basename='booking')
 
 urlpatterns = [
     path('', include(router.urls)),
