@@ -18,3 +18,6 @@ class Booking(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=9, null=False, blank=False)
     commentary = models.CharField(max_length=250, null=False, blank=False)
     guests_count = models.IntegerField(null=False, blank=False)
+
+    def __str__(self):
+        return str(self.pk)
