@@ -51,6 +51,11 @@ class BookingSerializer(serializers.ModelSerializer):
         except serializers.ValidationError as exc:
             exc_dict.update(**exc.get_full_details())
 
+        try:
+            self._validate_available_date(args[0]["check_in"], args[0]["check_out"], args[0]["advertisement"])
+        except serializers.ValidationError as exc:
+            exc_dict.update(**exc.get_full_details())
+
         if exc_dict:
             raise serializers.ValidationError(exc_dict)
 
