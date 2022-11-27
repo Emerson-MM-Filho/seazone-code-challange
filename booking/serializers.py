@@ -2,6 +2,7 @@ from datetime import date
 from rest_framework import serializers
 
 from advertisement.models import Advertisement
+from api.error_code import ErrorCode
 from .models import Booking
 
 
@@ -10,24 +11,34 @@ class BookingSerializer(serializers.ModelSerializer):
         model = Booking
         fields = "__all__"
 
-    def _validate_check_out_date(self) -> None:
-        data = self._kwargs['data']
-        check_in_date = date.fromisoformat(data['check_in'])
-        check_out_date = date.fromisoformat(data['check_out'])
+    def _validate_check_out_date(self, check_in: date, check_out: date) -> None:
+        if check_in > check_out:
+            raise serializers.ValidationError(
+                {"check_out": f"The check-out ({check_out}) date must be later than the check-in ({check_in}) date"},
+                code=ErrorCode.INVALID_FIELD.value
+            )
 
-        if check_in_date > check_out_date:
-            raise serializers.ValidationError('The check-out date must be later than the check-in date')
-
-    def _validate_guests_count(self) -> None:
-        guests_count = int(self._kwargs['data']['guests_count'])
-        advertisement_id = self._kwargs['data']['advertisement']
-        advertisement = Advertisement.objects.get(id=advertisement_id)
-
+    def _validate_guests_count(self, guests_count: int, advertisement: Advertisement) -> None:
         if guests_count > advertisement.propriety.guests_limit:
-            raise serializers.ValidationError('The check-out date must be later than the check-in date')
+            raise serializers.ValidationError(
+                {"guests_count": f"The maximum number of guests is: {advertisement.propriety.guests_limit}"},
+                code=ErrorCode.INVALID_FIELD.value
+            )
 
-    def is_valid(self, *args, **kwargs):
-        self._validate_check_out_date()
-        self._validate_guests_count()
+    def validate(self, *args, **kwargs):
+        exc_dict = dict()
+    
+        try:
+            self._validate_check_out_date(args[0]["check_in"], args[0]["check_out"])
+        except serializers.ValidationError as exc:
+            exc_dict.update(**exc.get_full_details())
 
-        super().is_valid(*args, **kwargs)
+        try:
+            self._validate_guests_count(args[0]["guests_count"], args[0]["advertisement"])
+        except serializers.ValidationError as exc:
+            exc_dict.update(**exc.get_full_details())
+
+        if exc_dict:
+            raise serializers.ValidationError(exc_dict)
+
+        return super().validate(*args, **kwargs)
