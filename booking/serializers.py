@@ -1,9 +1,9 @@
 from datetime import date
 from rest_framework import serializers
 
-from advertisement.models import Advertisement
-from api.error_code import ErrorCode
 from .models import Booking
+from api.error_code import ErrorCode
+from advertisement.models import Advertisement
 
 
 class BookingSerializer(serializers.ModelSerializer):
@@ -27,7 +27,7 @@ class BookingSerializer(serializers.ModelSerializer):
 
     def validate(self, *args, **kwargs):
         exc_dict = dict()
-    
+
         try:
             self._validate_check_out_date(args[0]["check_in"], args[0]["check_out"])
         except serializers.ValidationError as exc:
