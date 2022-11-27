@@ -31,3 +31,9 @@ python .\manage.py load_default_data
 ```shell
 python .\manage.py runserver
 ```
+
+## Tests:
+```shell
+# All apps
+python .\manage.py test
+```
