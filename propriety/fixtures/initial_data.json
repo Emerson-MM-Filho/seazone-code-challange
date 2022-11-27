@@ -1,0 +1,72 @@
+[
+    {
+        "model": "propriety.propriety",
+        "pk": 1,
+        "fields": {
+          "created_at": "2022-11-25 00:00:00.000000-00",
+          "updated_at": "2022-11-26 00:00:00.000000-00",
+          "activation_date": "2022-11-26 00:00:00.000000-00",
+          "code": "p84xs9",
+          "guests_limit": 4,
+          "bathroom_count": 2,
+          "pet_frendly": true,
+          "cleaner_fee": 150.00
+        }
+    },
+    {
+        "model": "propriety.propriety",
+        "pk": 2,
+        "fields": {
+          "created_at": "2022-11-25 00:00:00.000000-00",
+          "updated_at": "2022-11-26 00:00:00.000000-00",
+          "activation_date": "2022-11-26 00:00:00.000000-00",
+          "code": "1d4hn6",
+          "guests_limit": 3,
+          "bathroom_count": 1,
+          "pet_frendly": false,
+          "cleaner_fee": 75.00
+        }
+    },
+    {
+      "model": "propriety.propriety",
+      "pk": 3,
+      "fields": {
+        "created_at": "2022-11-25 00:00:00.000000-00",
+        "updated_at": "2022-11-26 00:00:00.000000-00",
+        "activation_date": "2022-11-26 00:00:00.000000-00",
+        "code": "k34as0",
+        "guests_limit": 5,
+        "bathroom_count": 3,
+        "pet_frendly": true,
+        "cleaner_fee": 175.00
+      }
+    },
+    {
+      "model": "propriety.propriety",
+      "pk": 4,
+      "fields": {
+        "created_at": "2022-11-25 00:00:00.000000-00",
+        "updated_at": "2022-11-26 00:00:00.000000-00",
+        "activation_date": "2022-11-26 00:00:00.000000-00",
+        "code": "90afs7",
+        "guests_limit": 2,
+        "bathroom_count": 1,
+        "pet_frendly": true,
+        "cleaner_fee": 75.00
+      }
+    },
+    {
+      "model": "propriety.propriety",
+      "pk": 5,
+      "fields": {
+        "created_at": "2022-11-25 00:00:00.000000-00",
+        "updated_at": "2022-11-26 00:00:00.000000-00",
+        "activation_date": "2022-11-26 00:00:00.000000-00",
+        "code": "34jk5g",
+        "guests_limit": 4,
+        "bathroom_count": 2,
+        "pet_frendly": true,
+        "cleaner_fee": 125.00
+      }
+    }
+  ]

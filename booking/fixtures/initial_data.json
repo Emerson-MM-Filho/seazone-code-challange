@@ -1,0 +1,122 @@
+[
+  {
+    "model": "booking.booking",
+    "pk": 1,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "1d4hn6",
+      "advertisement_id": 1,
+      "check_in": "2022-12-27",
+      "check_out": "2023-01-03",
+      "price": 3150.00,
+      "commentary": "Some commentary",
+      "guests_count": 4
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 2,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "9asdf8",
+      "advertisement_id": 2,
+      "check_in": "2022-12-27",
+      "check_out": "2023-01-03",
+      "price": 1075.00,
+      "commentary": "Some commentary",
+      "guests_count": 3
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 3,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "238og3",
+      "advertisement_id": 3,
+      "check_in": "2022-12-27",
+      "check_out": "2023-01-03",
+      "price": 4675.00,
+      "commentary": "Some commentary",
+      "guests_count": 5
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 4,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "as89ph",
+      "advertisement_id": 4,
+      "check_in": "2022-12-27",
+      "check_out": "2023-01-03",
+      "price": 575.00,
+      "commentary": "Some commentary",
+      "guests_count": 2
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 5,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "9oafsd",
+      "advertisement_id": 1,
+      "check_in": "2023-01-04",
+      "check_out": "2023-01-11",
+      "price": 3150.00,
+      "commentary": "Some commentary",
+      "guests_count": 4
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 6,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "adn071",
+      "advertisement_id": 2,
+      "check_in": "2023-01-04",
+      "check_out": "2023-01-11",
+      "price": 1075.00,
+      "commentary": "Some commentary",
+      "guests_count": 3
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 7,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "sdf576",
+      "advertisement_id": 3,
+      "check_in": "2023-01-04",
+      "check_out": "2023-01-11",
+      "price": 4675.00,
+      "commentary": "Some commentary",
+      "guests_count": 5
+    }
+  },
+  {
+    "model": "booking.booking",
+    "pk": 8,
+    "fields": {
+      "created_at": "2022-11-25 00:00:00.000000-00",
+      "updated_at": "2022-11-26 00:00:00.000000-00",
+      "code": "gdfv57",
+      "advertisement_id": 4,
+      "check_in": "2023-01-04",
+      "check_out": "2023-01-11",
+      "price": 575.00,
+      "commentary": "Some commentary",
+      "guests_count": 2
+    }
+  }
+]
