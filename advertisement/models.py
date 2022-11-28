@@ -14,3 +14,7 @@ class Advertisement(models.Model):
 
     def __str__(self) -> str:
         return f"{self.pk} - {self.platform} - {self.propriety.code}"
+
+    def delete(self):
+        self.active = False
+        self.save()
