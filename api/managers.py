@@ -4,6 +4,7 @@ from.querysets import ActiveQuerySet
 class ActiveManager(models.Manager):
 
     def active(self):
+        """Returns all active instances of the model"""
         return self.model.objects.filter(active=True)
 
     def get_queryset(self):
