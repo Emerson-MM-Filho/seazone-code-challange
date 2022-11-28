@@ -8,7 +8,7 @@ class AdvertisementViewSet(viewsets.ModelViewSet):
     """
         API endpoint for advertisement CRUD.
     """
-    queryset = Advertisement.objects.all().order_by('-created_at')
+    queryset = Advertisement.objects.active().order_by('-created_at')
     serializer_class = AdvertisementSerializer
     http_method_names = [
         "get",
