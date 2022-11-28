@@ -10,3 +10,11 @@ class BookingViewSet(viewsets.ModelViewSet):
     """
     queryset = Booking.objects.all().order_by('-created_at')
     serializer_class = BookingSerializer
+    http_method_names = [
+        "get",
+        "post",
+        "delete",
+        "head",
+        "options",
+        "trace",
+    ]
