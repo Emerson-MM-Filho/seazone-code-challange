@@ -12,6 +12,14 @@ class TestBooking(APITestCase):
 
     fixtures = ["initial_data.json"]
 
+    def test_update_booking_instance(self):
+        booking = Booking.objects.first()
+        default_commentary = booking.commentary
+        booking.commentary = "another random commentary"
+        booking.save()
+
+        self.assertEqual(Booking.objects.first().commentary, default_commentary)
+
     def test_get_bookings(self):
         response = self.client.get(self.url)
         expected_result = [BookingSerializer(booking).data for booking in Booking.objects.all()]
