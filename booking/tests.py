@@ -192,15 +192,7 @@ class TestBooking(APITestCase):
 
         advertisement = Advertisement.objects.first()
 
-        expected_result = serializers.ValidationError(
-            {"check_in/check_out": f"Property {advertisement.propriety} is already booked for the indicated dates"},
-            code=ErrorCode.INVALID_BOOKING_SCHEDULING.value
-        )
-
-        with self.assertRaises(serializers.ValidationError) as execution:
+        try:
             BookingSerializer()._validate_available_date(check_in, check_out, advertisement)
-
-        self.assertEquals(
-            execution.exception.get_full_details(),
-            expected_result.get_full_details()
-        )
+        except:
+            self.fail("BookingSerializer._validate_available_date method failing with correct check in and check out date.")
