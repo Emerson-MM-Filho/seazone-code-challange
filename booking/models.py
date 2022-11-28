@@ -23,3 +23,8 @@ class Booking(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+    def save(self, *args, **kwargs):
+        if self.pk is not None:
+            return
+        super().save(*args, **kwargs)
