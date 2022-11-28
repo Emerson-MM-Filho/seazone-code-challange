@@ -10,3 +10,12 @@ class AdvertisementViewSet(viewsets.ModelViewSet):
     """
     queryset = Advertisement.objects.all().order_by('-created_at')
     serializer_class = AdvertisementSerializer
+    http_method_names = [
+        "get",
+        "post",
+        "put",
+        "patch",
+        "head",
+        "options",
+        "trace",
+    ]
