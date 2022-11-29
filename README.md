@@ -1,3 +1,6 @@
+# Seazone Code Challange
+[See challenge description](challenge_description.pdf)
+
 ## Pre-requisitos
 * Python 3.8.9 installed.
 * [PostgreSQL server running](https://www.postgresql.org/download/) (or Docker).
@@ -34,6 +37,5 @@ python .\manage.py runserver
 
 ## Tests:
 ```shell
-# All apps
 python .\manage.py test
 ```
